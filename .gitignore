@@ -5,5 +5,5 @@ src/pip-selfcheck.json
 src/blog/manage.py
 src/blog/blog/settings.py
 src/blog/blog/settings.pyc
-src/blog/blog/db.sqlite3
+src/blog/db.sqlite3
 src/local/**
