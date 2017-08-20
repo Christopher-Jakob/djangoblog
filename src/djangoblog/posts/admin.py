@@ -7,6 +7,10 @@ from .models import Post
 
 class PostAdmin(admin.ModelAdmin):
 	list_display = ["__unicode__", "timestamp"]
+	list_display_links = ["updated"]
+	list_filter = ["updated", "timestamp"]
+	search_fields = ["title", "content"]
+
 	class Meta:
 		model = Post
 
