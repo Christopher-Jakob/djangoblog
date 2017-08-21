@@ -4,10 +4,10 @@ from . import views #relative import to post views
 
 
 urlpatterns = [
-	url(r'^$',"views.posts_list" ), #list all posts
-	url(r'create/^$',"views.posts_create" ),
-	url(r'detail/^$',"views.posts_detail" ),
-	url(r'update/^$',"views.posts_update" ),
-	url(r'delete/^$',"views.posts_delete" ),
-
+	 
+	url(r'^create/$',views.posts_create, name='create'),
+	url(r'(?P<pk>\d+)/$',views.posts_detail, name='detail'), # takes an object id argument
+	url(r'(?P<pk>\d+)/edit/$',views.posts_update, name='update'),
+	url(r'(?P<pk>\d+)/delete/$',views.posts_delete, name='delete'),
+	url(r'^$',views.posts_list, name='list' ), #list all posts kept last to ensure other views are seen first
 ]

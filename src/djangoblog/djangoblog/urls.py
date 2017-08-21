@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from posts import views as posts_views
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^posts/$',include("posts.urls")),
+    url(r'^posts/', include('posts.urls', namespace = 'posts')),
 ]
